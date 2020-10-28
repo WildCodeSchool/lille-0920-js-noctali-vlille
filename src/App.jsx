@@ -1,5 +1,4 @@
-import React from "react";
-import MapLille from "./components/MapLille";
+import MapLille from './components/MapLille';
 
 function App() {
   return <MapLille />;

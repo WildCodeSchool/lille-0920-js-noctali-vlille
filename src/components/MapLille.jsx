@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import axios from "axios";
-import { Map, Marker, Popup, TileLayer } from "react-leaflet";
+import axios from 'axios';
+import 'leaflet/dist/leaflet.css';
+import { Map, Marker, TileLayer } from 'react-leaflet';
 
 class MapLille extends React.Component {
   constructor(props) {
@@ -14,11 +15,10 @@ class MapLille extends React.Component {
   componentDidMount() {
     axios
       .get(
-        "https://opendata.lillemetropole.fr/api/records/1.0/search/?dataset=vlille-realtime&q=&rows=251&facet=libelle&facet=nom&facet=commune&facet=etat&facet=type&facet=etatconnexion"
+        'https://opendata.lillemetropole.fr/api/records/1.0/search/?dataset=vlille-realtime&q=&rows=251&facet=libelle&facet=nom&facet=commune&facet=etat&facet=type&facet=etatconnexion'
       )
       .then((response) => response.data)
       .then((data) => {
-        console.log(data.records);
         this.setState({
           stations: data.records,
         });
@@ -26,6 +26,7 @@ class MapLille extends React.Component {
   }
 
   render() {
+    const { stations } = this.state;
     return (
       <div>
         <h1>Lille</h1>
@@ -34,7 +35,7 @@ class MapLille extends React.Component {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           />
-          {this.state.stations.map((station) => (
+          {stations.map((station) => (
             <Marker
               key={station.fields.nom}
               position={[
