@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+}
+
+div {
+  background-color: rgb(44, 40, 40);
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+
+  img {
+    height: 90%;
+    width: auto;
+    margin: auto;
+  }
+}
