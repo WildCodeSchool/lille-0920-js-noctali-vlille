@@ -37,3 +37,9 @@ code {
   content: '';
   height: 15vh;
 }
+
+header {
+  display: flex;
+  justify-content: right;
+  background-color: black;
+}
