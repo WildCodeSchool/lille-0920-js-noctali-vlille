@@ -1,7 +1,7 @@
 import React from 'react';
 
 import axios from 'axios';
-import { Map, Marker, TileLayer } from 'react-leaflet';
+import { Map, Marker, TileLayer, Popup } from 'react-leaflet';
 
 class MapLille extends React.Component {
   constructor(props) {
@@ -40,7 +40,13 @@ class MapLille extends React.Component {
                 station.geometry.coordinates[1],
                 station.geometry.coordinates[0],
               ]}
-            />
+            >
+              <Popup>
+                {station.fields.nom}
+                <br />
+                {station.fields.adress}
+              </Popup>
+            </Marker>
           ))}
         </Map>
       </div>
