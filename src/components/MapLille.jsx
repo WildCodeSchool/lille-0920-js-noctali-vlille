@@ -1,7 +1,6 @@
 import React from 'react';
 
 import axios from 'axios';
-import 'leaflet/dist/leaflet.css';
 import { Map, Marker, TileLayer } from 'react-leaflet';
 
 class MapLille extends React.Component {
@@ -29,7 +28,6 @@ class MapLille extends React.Component {
     const { stations } = this.state;
     return (
       <div>
-        <h1>Lille</h1>
         <Map center={[50.6365654, 3.0635282]} zoom={14}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
