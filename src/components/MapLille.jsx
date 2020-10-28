@@ -1,5 +1,4 @@
 import React from 'react';
-
 import axios from 'axios';
 import { Map, Marker, TileLayer, Popup } from 'react-leaflet';
 
@@ -44,7 +43,7 @@ class MapLille extends React.Component {
               <Popup>
                 {station.fields.nom}
                 <br />
-                {station.fields.adress}
+                {station.fields.adresse}
               </Popup>
             </Marker>
           ))}
